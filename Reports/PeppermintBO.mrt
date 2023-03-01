@@ -1,0 +1,822 @@
+{
+  "ReportVersion": "2023.1.7.0",
+  "ReportGuid": "b715590b9adc4884905591f8ef3e3f2b",
+  "ReportName": "test",
+  "ReportAlias": "test",
+  "ReportCreated": "/Date(1673520580000+0000)/",
+  "ReportChanged": "/Date(1673520580000+0000)/",
+  "EngineVersion": "EngineV2",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
+  "Dictionary": {
+    "Variables": {
+      "0": {
+        "Value": "SGR-test",
+        "Name": "USER_NAME",
+        "Alias": "USER_NAME",
+        "Type": "System.String"
+      },
+      "1": {
+        "Value": "sgr dev",
+        "Name": "TENANT_NAME",
+        "Alias": "TENANT_NAME",
+        "Type": "System.String"
+      }
+    },
+    "BusinessObjects": {
+      "0": {
+        "BusinessObjects": {
+          "0": {
+            "BusinessObjects": {
+              "0": {
+                "Columns": {
+                  "0": {
+                    "Name": "Name",
+                    "Index": -1,
+                    "NameInSource": "Name",
+                    "Alias": "Name",
+                    "Type": "System.String"
+                  },
+                  "1": {
+                    "Name": "AddressCity",
+                    "Index": -1,
+                    "NameInSource": "AddressCity",
+                    "Alias": "AddressCity",
+                    "Type": "System.String"
+                  },
+                  "2": {
+                    "Name": "AddressCountry",
+                    "Index": -1,
+                    "NameInSource": "AddressCountry",
+                    "Alias": "AddressCountry",
+                    "Type": "System.String"
+                  },
+                  "3": {
+                    "Name": "AddressLine",
+                    "Index": -1,
+                    "NameInSource": "AddressLine",
+                    "Alias": "AddressLine",
+                    "Type": "System.String"
+                  },
+                  "4": {
+                    "Name": "AddressState",
+                    "Index": -1,
+                    "NameInSource": "AddressState",
+                    "Alias": "AddressState",
+                    "Type": "System.String"
+                  },
+                  "5": {
+                    "Name": "AddressZIP",
+                    "Index": -1,
+                    "NameInSource": "AddressZIP",
+                    "Alias": "AddressZIP",
+                    "Type": "System.String"
+                  }
+                },
+                "Guid": "cb0e88e4fd0a4eedbcbb59f8b8674131",
+                "Name": "Address",
+                "Alias": "Address"
+              }
+            },
+            "Columns": {
+              "0": {
+                "Name": "CustomerCode",
+                "Index": -1,
+                "NameInSource": "CustomerCode",
+                "Alias": "CustomerCode",
+                "Type": "System.String"
+              },
+              "1": {
+                "Name": "CustomerName",
+                "Index": -1,
+                "NameInSource": "CustomerName",
+                "Alias": "CustomerName",
+                "Type": "System.String"
+              },
+              "2": {
+                "Name": "CustomerReminderLevel",
+                "Index": -1,
+                "NameInSource": "CustomerReminderLevel",
+                "Alias": "CustomerReminderLevel",
+                "Type": "System.Int32"
+              }
+            },
+            "Guid": "a50099c2bed84d46936ead48adccaeff",
+            "Name": "Customer",
+            "Alias": "Customer"
+          },
+          "1": {
+            "Columns": {
+              "0": {
+                "Name": "InvoiceNumber",
+                "Index": -1,
+                "NameInSource": "InvoiceNumber",
+                "Alias": "InvoiceNumber",
+                "Type": "System.String"
+              },
+              "1": {
+                "Name": "Amount",
+                "Index": -1,
+                "NameInSource": "Amount",
+                "Alias": "Amount",
+                "Type": "System.Decimal"
+              },
+              "2": {
+                "Name": "CurrencyCode",
+                "Index": -1,
+                "NameInSource": "CurrencyCode",
+                "Alias": "CurrencyCode",
+                "Type": "System.String"
+              },
+              "3": {
+                "Name": "InvoiceDate",
+                "Index": -1,
+                "NameInSource": "InvoiceDate",
+                "Alias": "InvoiceDate",
+                "Type": "System.DateOnly"
+              },
+              "4": {
+                "Name": "DueDate",
+                "Index": -1,
+                "NameInSource": "DueDate",
+                "Alias": "DueDate",
+                "Type": "System.DateOnly"
+              }
+            },
+            "Guid": "f36cc6e6447248ffaf6ac2e45e52a1b8",
+            "Name": "Invoices",
+            "Alias": "Invoices"
+          }
+        },
+        "Columns": {
+          "0": {
+            "Name": "ReminderDate",
+            "Index": -1,
+            "NameInSource": "ReminderDate",
+            "Alias": "ReminderDate",
+            "Type": "System.DateOnly"
+          }
+        },
+        "Guid": "edbaa49545d8459f92fe5c3dee7a0a0b",
+        "Name": "Invoice reminders",
+        "Alias": "Invoice reminders"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "85cfc33b998c49d5ae748086a445a47b",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "ClientRectangle": "0,0.4,19.01,2.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:"
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderInvoice_reminders",
+          "ClientRectangle": "0,3.8,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_ReminderDate",
+              "ClientRectangle": "0,0,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ReminderDate"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataInvoice_reminders",
+          "ClientRectangle": "0,5.4,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_ReminderDate",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.ReminderDate}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          },
+          "SkipFirst": false,
+          "BusinessObjectGuid": "105025a3ecd048329c43d46b994b2712"
+        },
+        "3": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderCustomer",
+          "ClientRectangle": "0,7,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Customer_CustomerCode",
+              "ClientRectangle": "0,0,6.4,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CustomerCode"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Customer_CustomerName",
+              "ClientRectangle": "6.4,0,6.4,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CustomerName"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Customer_CustomerReminderLevel",
+              "ClientRectangle": "12.8,0,6.2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CustomerReminderLevel"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataCustomer",
+          "ClientRectangle": "0,8.6,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Customer_CustomerCode",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,6.4,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Customer.CustomerCode}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Customer_CustomerName",
+              "CanGrow": true,
+              "ClientRectangle": "6.4,0,6.4,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Customer.CustomerName}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Customer_CustomerReminderLevel",
+              "CanGrow": true,
+              "ClientRectangle": "12.8,0,6.2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Customer.CustomerReminderLevel}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          },
+          "NewPageAfter": true,
+          "SkipFirst": false,
+          "BusinessObjectGuid": "bcaa786e39ec4d858d3dd2823cc3efc4",
+          "MasterComponent": "DataInvoice_reminders"
+        },
+        "5": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderInvoices",
+          "ClientRectangle": "0,10.2,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Invoices_InvoiceNumber",
+              "ClientRectangle": "0,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "InvoiceNumber"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Invoices_Amount",
+              "ClientRectangle": "3.8,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Amount"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Invoices_CurrencyCode",
+              "ClientRectangle": "7.6,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CurrencyCode"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Invoices_InvoiceDate",
+              "ClientRectangle": "11.4,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "InvoiceDate"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "HeaderInvoice_reminders_Invoices_DueDate",
+              "ClientRectangle": "15.2,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "DueDate"
+              },
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "6": {
+          "Ident": "StiDataBand",
+          "Name": "DataInvoices",
+          "ClientRectangle": "0,11.8,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Invoices_InvoiceNumber",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Invoices.InvoiceNumber}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Invoices_Amount",
+              "CanGrow": true,
+              "ClientRectangle": "3.8,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Invoices.Amount}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Invoices_CurrencyCode",
+              "CanGrow": true,
+              "ClientRectangle": "7.6,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Invoices.CurrencyCode}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Invoices_InvoiceDate",
+              "CanGrow": true,
+              "ClientRectangle": "11.4,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Invoices.InvoiceDate}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "DataInvoice_reminders_Invoices_DueDate",
+              "CanGrow": true,
+              "ClientRectangle": "15.2,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Invoice_reminders.Invoices.DueDate}"
+              },
+              "VertAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          },
+          "SkipFirst": false,
+          "BusinessObjectGuid": "5f0d863b355c402aab8bd11de98ab16e",
+          "MasterComponent": "DataCustomer"
+        },
+        "7": {
+          "Ident": "StiFooterBand",
+          "Name": "FooterInvoices",
+          "ClientRectangle": "0,13.4,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Invoices_InvoiceNumber",
+              "ClientRectangle": "0,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Invoices_Amount",
+              "ClientRectangle": "3.8,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Invoices_CurrencyCode",
+              "ClientRectangle": "7.6,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Invoices_InvoiceDate",
+              "ClientRectangle": "11.4,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Invoices_DueDate",
+              "ClientRectangle": "15.2,0,3.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "8": {
+          "Ident": "StiFooterBand",
+          "Name": "FooterCustomer",
+          "ClientRectangle": "0,15,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Customer_CustomerCode",
+              "ClientRectangle": "0,0,6.4,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Customer_CustomerName",
+              "ClientRectangle": "6.4,0,6.4,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_Customer_CustomerReminderLevel",
+              "ClientRectangle": "12.8,0,6.2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "9": {
+          "Ident": "StiFooterBand",
+          "Name": "FooterInvoice_reminders",
+          "ClientRectangle": "0,16.6,19.01,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "FooterInvoice_reminders_ReminderDate",
+              "ClientRectangle": "0,0,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";10;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        }
+      },
+      "PageWidth": 21.01,
+      "PageHeight": 29.69,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      }
+    }
+  }
+}
